@@ -46,11 +46,15 @@ const api = new ExpTechApi(config.cache.api.key);
 const timer: Record<string, number> = {};
 const eewTimer: Record<string, number> = {};
 
-const ntp = reactive({
+const ntp = {
   remote: Date.now(),
   server: Date.now(),
   client: Date.now(),
-});
+  get current() {
+    return ntp.server + (Date.now() - ntp.client);
+  },
+};
+const currentTime = ref(ntp.current);
 const activeReport = ref<Report>();
 const currentView = ref<string>("home");
 
@@ -67,10 +71,6 @@ const rts = reactive<Rts>({
 
 const currentEewIndex = ref<string>();
 let isReplaying: boolean = false;
-
-const getAccurateTime = () => {
-  return ntp.server + (Date.now() - ntp.client);
-};
 
 const updateResources = async () => {
   try {
@@ -198,6 +198,8 @@ api.on(WebSocketEvent.Rts, (r) => {
     return;
   }
 
+  currentTime.value = ntp.current;
+
   r.int ??= [];
 
   for (const i of r.int) {
@@ -219,7 +221,7 @@ api.on(WebSocketEvent.Eew, (e) => {
 
   console.debug(e);
 
-  const time = getAccurateTime();
+  const time = ntp.current;
   const waveRadius = calculateWaveRadius(time, e.eq.depth, e.eq.time);
 
   const { intensity } = calculateExpectedIntensity(
@@ -289,7 +291,7 @@ api.on(WebSocketEvent.Eew, (e) => {
             e.time
           );
 
-          const time = getAccurateTime();
+          const time = ntp.current;
 
           p = Math.floor((p - time) / 1000);
           s = Math.floor((s - time) / 1000);
@@ -372,7 +374,7 @@ api.on(WebSocketEvent.Eew, (e) => {
       for (const id in eew) {
         const e = eew[id];
 
-        eew[id].r = calculateWaveRadius(getAccurateTime(), e.depth, e.time);
+        eew[id].r = calculateWaveRadius(ntp.current, e.depth, e.time);
       }
     }, 100);
   }
@@ -554,7 +556,7 @@ onBeforeUnmount(() => {
 
 <template lang="pug">
 NavigationBar(:current-view="currentView", :change-view="changeView")
-TimeDisplay(:timestamp="ntp.server")
+TimeDisplay(:timestamp="currentTime")
 MapView(:current-view="currentView", :reports="reports", :active-report="activeReport", :stations="stations", :rts="rts", :eew="eew", :current-eew-index="currentEewIndex", :change-report="changeReport")
 HomeView(:current-view="currentView", :stations="stations", :rts="rts", :eew="eew", :current-eew-index="currentEewIndex", :reports="reports", :change-report="changeReport", :change-view="changeView")
 ReportBox(:current-view="currentView", :report="activeReport", :handle-hide-report-box="handleHideReportBox")
