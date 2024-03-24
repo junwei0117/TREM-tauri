@@ -52,7 +52,7 @@ body:has(#report-box.show) .report-list-wrapper {
   min-height: 0;
   padding: 8px;
   border-radius: 16px;
-  background-color: var(--surface-card);
+  background-color: var(--surface-100);
   pointer-events: all;
 
   /* animation */

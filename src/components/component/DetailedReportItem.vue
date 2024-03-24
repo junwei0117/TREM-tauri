@@ -39,7 +39,7 @@ defineProps<{
   gap: 8px;
   padding: 8px;
   border-radius: 11px;
-  background-color: var(--surface-100);
+  background-color: var(--surface-card);
   color: #fff;
   font-size: 16px;
   margin: 1px;
