@@ -8,11 +8,13 @@ import {
 import { createApp } from "vue";
 import { getCurrent } from "@tauri-apps/api/window";
 import { getMatches } from "@tauri-apps/plugin-cli";
+import PrimeVue from 'primevue/config';
 
 import { Config } from "./scripts/class/config";
 import { version } from "../package.json";
 
 import "maplibre-gl/dist/maplibre-gl.css";
+import 'primevue/resources/themes/lara-dark-blue/theme.css';
 import "./styles.css";
 
 const webviewWindow = getCurrent();
@@ -27,6 +29,9 @@ if (!args.args["quiet"].value) {
 const config = new Config();
 
 const app = createApp(App);
+app.use(PrimeVue, {
+  ripple: true
+});
 app.provide("config", config);
 app.mount("#app");
 

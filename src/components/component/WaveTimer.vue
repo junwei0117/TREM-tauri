@@ -32,7 +32,7 @@ defineProps<{
   padding: 8px;
   padding-left: 12px;
   border-radius: 20px;
-  background-color: hsl(var(--surface-hsl));
+  background-color: var(--surface-100);
   color: #fff;
 
   > .local-title {
@@ -48,18 +48,19 @@ defineProps<{
     display: flex;
     gap: 8px;
     border-radius: 12px;
-    background-color: hsl(var(--surface-variant-hsl));
+    background-color: var(--surface-card);
 
     > .local-intensity {
-      width: 44px;
-      aspect-ratio: 1;
-      padding: 8px;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      height: 52px;
+      width: 52px;
       border-radius: inherit;
-      line-height: 44px;
+      line-height: 52px;
       font-family: "Open Sans", sans-serif;
-      font-size: 44px;
+      font-size: 42px;
       font-weight: 800;
-      text-align: center;
     }
 
     > .wave-timer-container {
@@ -74,13 +75,13 @@ defineProps<{
         padding: 4px;
 
         > .wave-timer-name {
-          font-size: 14px;
+          font-size: 12px;
           opacity: 0.6;
         }
 
         > .wave-timer-value {
-          line-height: 26px;
-          font-size: 26px;
+          line-height: 24px;
+          font-size: 24px;
           font-weight: 700;
           text-align: center;
         }

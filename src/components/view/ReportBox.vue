@@ -286,8 +286,9 @@ const copyReport = function (event: MouseEvent, report?: Report) {
     gap: 4px;
     min-height: 0;
     border-radius: 20px;
-    background-color: hsl(var(--surface-hsl));
-    color: #fff;
+    border: 1px solid var(--surface-border);
+    background-color: var(--surface-100);
+    box-shadow: 0 0 0 8px rgb(0 0 0 / 0.4);
     white-space: nowrap;
     text-rendering: optimizeLegibility;
     pointer-events: all;
@@ -312,15 +313,15 @@ const copyReport = function (event: MouseEvent, report?: Report) {
       gap: 8px;
       padding: 12px;
       border-radius: 12px;
-      background-color: hsl(var(--background-variant-hsl));
+      background-color: var(--surface-50);
 
       > .report-box-header {
         display: flex;
 
         > .report-source {
           flex: 1;
-          opacity: 0.6;
           line-height: 32px;
+          color: var(--text-color-secondary);
           font-size: 14px;
           font-weight: 300;
           text-align: right;
@@ -342,7 +343,7 @@ const copyReport = function (event: MouseEvent, report?: Report) {
 
           > .report-subtitle {
             height: 16px;
-            opacity: 0.86;
+            color: var(--text-color-secondary);
             line-height: 16px;
             font-size: 14px;
           }
@@ -419,16 +420,16 @@ const copyReport = function (event: MouseEvent, report?: Report) {
             display: flex;
             gap: 4px;
             padding: 2px;
-            border-radius: 8px;
-            background-color: hsl(var(--background-variant-hsl));
+            border-radius: 6px;
+            background-color: var(--surface-ground);
 
             > .report-intensity-sort-btn {
               display: flex;
               align-items: center;
               justify-content: center;
-              width: 14px;
-              height: 14px;
-              padding: 2px;
+              width: 16px;
+              height: 16px;
+              padding: 4px;
               border-radius: 4px;
               background-color: transparent;
               cursor: pointer;
@@ -441,16 +442,15 @@ const copyReport = function (event: MouseEvent, report?: Report) {
               }
 
               > .report-intensity-sort-btn-icon {
-                color: hsl(0deg 0% 100% / 0.5);
-                font-size: 14px;
+                font-size: 12px;
                 transition: color 0.1s cubic-bezier(0.2, 0, 0, 1);
               }
 
               &:has(input:checked) {
-                background-color: #d9d9d9;
+                background-color: var(--surface-800);
 
                 > .report-intensity-sort-btn-icon {
-                  color: hsl(var(--surface-variant-hsl));
+                  color: var(--surface-ground);
                 }
               }
 
@@ -467,7 +467,7 @@ const copyReport = function (event: MouseEvent, report?: Report) {
           min-height: 0;
           padding: 8px;
           border-radius: 16px;
-          background-color: hsl(var(--surface-variant-hsl));
+          background-color: var(--surface-ground);
 
           &:hover > .report-intensity-list-scroller {
             overflow-y: auto;
@@ -515,7 +515,7 @@ const copyReport = function (event: MouseEvent, report?: Report) {
               }
 
               > .report-intensity-item {
-                background-color: hsl(var(--background-hsl));
+                background-color: var(--surface-card);
               }
             }
           }

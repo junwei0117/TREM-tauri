@@ -29,7 +29,7 @@ defineProps<{
   gap: 8px;
   height: 44px;
   border-radius: 11px;
-  background-color: hsl(var(--surface-variant-hsl));
+  background-color: var(--surface-100);
   color: #fff;
   font-size: 16px;
   margin: 1px;
@@ -91,7 +91,7 @@ defineProps<{
   }
 
   &:active {
-    background-color: hsl(var(--surface-variant-hsl));
+    background-color: var(--surface-200);
   }
 }
 </style>

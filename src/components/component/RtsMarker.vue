@@ -143,10 +143,11 @@ const getIntensityColor = (rts?: RtsStation) => {
       flex-direction: column;
       margin-top: 8px;
       padding: 8px;
-      background-color: hsl(var(--surface-variant-hsl));
+      background-color: var(--surface-200);
+      border: 1px solid var(--surface-border);
       border-radius: 8px;
       white-space: nowrap;
-      color: #fff;
+      color: var(--text-color);
       text-rendering: optimizeLegibility;
       box-shadow: 0 0 8px 0 hsl(var(--background-hsl) / 0.6);
       cursor: default;

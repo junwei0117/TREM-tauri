@@ -29,7 +29,7 @@ defineProps<{
   > .report-detail-field-divider {
     width: 2px;
     height: 90%;
-    background-color: rgb(255 255 255 / 0.6);
+    background-color: var(--surface-border);
     border-radius: 2px;
   }
 
@@ -44,7 +44,7 @@ defineProps<{
       line-height: 12px;
       font-size: 12px;
       font-weight: 300;
-      opacity: 0.8;
+      color: var(--text-color-secondary);
     }
 
     > .report-detail-field-value {

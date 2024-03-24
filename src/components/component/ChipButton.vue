@@ -12,14 +12,18 @@ button.chip(@click="$emit('click', $event)")
 
 <style lang="scss" scoped>
 .chip {
-  --chip-label-hsl: 0deg 0% 90%;
-  --chip-label-hover-hsl: 0deg 0% 94%;
-  --chip-label-active-hsl: 0deg 0% 100%;
-  --chip-background-hsl: var(--surface-variant-hsl);
-  --chip-background-hover-hsl: var(--surface-variant-hsl);
-  --chip-background-active-hsl: var(--surface-hsl);
-  --chip-outline-hsl: var(--surface-hsl);
-  --chip-outline-hover-hsl: 0deg 0% 75%;
+  --chip-label: var(--text-color);
+  --chip-label-hover: 0deg 0% 94%;
+  --chip-label-active: 0deg 0% 100%;
+  --chip-background: var(--surface-card);
+  --chip-background-hover: color-mix(
+    in lab,
+    var(--surface-card),
+    var(--highlight-bg)
+  );
+  --chip-background-active: var(--surface-card);
+  --chip-outline: var(--surface-border);
+  --chip-outline-hover: 0deg 0% 75%;
 
   all: unset;
   display: flex;
@@ -29,12 +33,12 @@ button.chip(@click="$emit('click', $event)")
   padding-right: 10px;
   border-radius: 48px;
   cursor: pointer;
-  background-color: hsl(var(--chip-background-hsl));
-  color: hsl(var(--chip-label-hsl));
+  background-color: var(--chip-background);
+  color: var(--chip-label);
   transition-property: background-color, color, outline, opacity;
   transition-duration: 0.1s;
   transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
-  outline: 1px solid hsl(var(--chip-outline-hsl));
+  outline: 1px solid var(--chip-outline);
 
   &:disabled {
     cursor: not-allowed;
@@ -56,14 +60,14 @@ button.chip(@click="$emit('click', $event)")
 
   &:not(:disabled) {
     &:hover {
-      background-color: hsl(var(--chip-background-hover-hsl));
-      color: hsl(var(--chip-label-hover-hsl));
-      outline-color: hsl(var(--chip-outline-hover-hsl));
+      background-color: var(--chip-background-hover);
+      color: var(--chip-label-hover);
+      outline-color: var(--chip-outline-hover);
     }
 
     &:active {
-      background-color: hsl(var(--chip-background-active-hsl));
-      color: hsl(var(--chip-label-active-hsl));
+      background-color: var(--chip-background-active);
+      color: var(--chip-label-active);
     }
   }
 }

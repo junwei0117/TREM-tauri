@@ -50,7 +50,7 @@ defineProps<{
   gap: 12px;
   padding: 8px 12px;
   border-radius: 16px;
-  background-color: hsl(var(--surface-variant-hsl));
+  background-color: var(--surface-card);
 }
 
 .station-detail {

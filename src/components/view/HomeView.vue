@@ -161,7 +161,7 @@ onMounted(() => {});
   flex-direction: column;
   min-height: 0;
   border-radius: 20px;
-  background-color: hsl(var(--surface-hsl));
+  background-color: var(--surface-100);
   color: #fff;
   white-space: nowrap;
   border-radius: 20px;
@@ -506,7 +506,7 @@ onMounted(() => {});
           position: relative;
           border-radius: 16px;
           padding: 8px;
-          background-color: hsl(var(--surface-variant-hsl));
+          background-color: var(--surface-ground);
           min-height: 0;
           overflow-y: hidden;
 

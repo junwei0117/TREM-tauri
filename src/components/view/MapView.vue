@@ -115,9 +115,9 @@ onMounted(() => {
         source: "cn",
         layout: {},
         paint: {
-          "fill-color": "#2d3137",
+          "fill-color": "#1f2937",
           "fill-opacity": 1,
-          "fill-outline-color": "#545f70",
+          "fill-outline-color": "#374151",
         },
       })
       .addLayer({
@@ -126,9 +126,9 @@ onMounted(() => {
         source: "jp",
         layout: {},
         paint: {
-          "fill-color": "#2d3137",
+          "fill-color": "#1f2937",
           "fill-opacity": 1,
-          "fill-outline-color": "#545f70",
+          "fill-outline-color": "#374151",
         },
       })
       .addLayer({
@@ -137,9 +137,9 @@ onMounted(() => {
         source: "kp",
         layout: {},
         paint: {
-          "fill-color": "#2d3137",
+          "fill-color": "#1f2937",
           "fill-opacity": 1,
-          "fill-outline-color": "#545f70",
+          "fill-outline-color": "#374151",
         },
       })
       .addLayer({
@@ -148,9 +148,9 @@ onMounted(() => {
         source: "kr",
         layout: {},
         paint: {
-          "fill-color": "#2d3137",
+          "fill-color": "#1f2937",
           "fill-opacity": 1,
-          "fill-outline-color": "#545f70",
+          "fill-outline-color": "#374151",
         },
       })
       .addLayer({
@@ -159,7 +159,7 @@ onMounted(() => {
         source: "tw_county",
         layout: {},
         paint: {
-          "fill-color": "#383c43",
+          "fill-color": "#374151",
           "fill-opacity": 1,
         },
       })
@@ -192,7 +192,7 @@ onMounted(() => {
             "#0070e0",
             1,
             "#004080",
-            "#383c43",
+            "#374151",
           ],
           "fill-opacity": [
             "case",
@@ -214,7 +214,7 @@ onMounted(() => {
         source: "tw_county",
         layout: {},
         paint: {
-          "line-color": "#bcc7db",
+          "line-color": "#9ca3af",
           "line-opacity": 1,
           "line-width": 0.6,
         },

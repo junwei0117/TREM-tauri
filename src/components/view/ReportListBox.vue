@@ -52,7 +52,7 @@ body:has(#report-box.show) .report-list-wrapper {
   min-height: 0;
   padding: 8px;
   border-radius: 16px;
-  background-color: hsl(var(--surface-hsl));
+  background-color: var(--surface-card);
   pointer-events: all;
 
   /* animation */
@@ -82,7 +82,7 @@ body:has(#report-box.show) .report-list-wrapper {
     overflow-y: hidden;
 
     &::-webkit-scrollbar-track {
-      background-color: hsl(var(--background-variant-hsl));
+      background-color: var(--background-variant-hsl);
     }
 
     &::-webkit-scrollbar-button {

@@ -53,7 +53,7 @@ defineProps<{ area: AreaIntensity }>();
     padding-left: 24px;
 
     > .report-intensity-item {
-      background-color: hsl(var(--background-hsl));
+      background-color: var(--surface-card);
     }
   }
 }

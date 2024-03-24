@@ -22,7 +22,7 @@ defineProps<{
   gap: 8px;
   padding-right: 8px;
   border-radius: 24px;
-  background-color: hsl(var(--background-variant-hsl));
+  background-color: color-mix(in lab, var(--surface-card), var(--highlight-bg));
 
   > .report-intensity-item-intensity {
     height: 24px;
